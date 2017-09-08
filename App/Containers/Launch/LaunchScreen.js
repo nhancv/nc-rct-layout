@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { ScrollView, Text, Image, View } from 'react-native'
-import DevscreensButton from '../../ignite/DevScreens/DevscreensButton.js'
+import DevscreensButton from '../../../ignite/DevScreens/DevscreensButton.js'
 
-import { Images } from '../Themes'
+import { Images } from '../../Themes/index'
 
 // Styles
-import styles from './Styles/LaunchScreenStyles'
+import styles from './LaunchScreenStyles'
 
 export default class LaunchScreen extends Component {
   render () {
