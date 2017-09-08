@@ -23,7 +23,27 @@ export default class LaunchScreen extends Component {
         </Header>
         <Content>
 
-          {/*Content here*/}
+          {/*-------------*/}
+          <Text>Linear layout</Text>
+
+          <View style={linearLayoutStyles.container}>
+            <View style={linearLayoutStyles.header}>
+              <Text style={linearLayoutStyles.text}>200X100</Text>
+            </View>
+            <View style={linearLayoutStyles.main}>
+              <View  style={linearLayoutStyles.mainContent}>
+                <Text style={linearLayoutStyles.text}>100X100</Text>
+              </View>
+            </View>
+            <View style={linearLayoutStyles.footer}>
+              <Text style={linearLayoutStyles.text}>200X100</Text>
+            </View>
+          </View>
+
+          {/*-------------*/}
+          <Text>Relative layout</Text>
+
+
 
         </Content>
       </Container>
@@ -31,7 +51,41 @@ export default class LaunchScreen extends Component {
   }
 }
 
-const styles = StyleSheet.create({
+const linearLayoutStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  header: {
+    height: 100,
+    width: 200,
+    backgroundColor: 'red'
+  },
+  main: {
+    height: 200,
+    width: 200,
+    padding: 25,
+    borderWidth: 25,
+    borderColor: 'black',
+    margin: 25,
+    backgroundColor: 'blue'
+  },
+  mainContent: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'red'
+  },
+  footer: {
+    height: 100,
+    width: 200,
+    backgroundColor: 'green'
+  },
+  text: {
+    color: '#ffffff',
+    fontSize: 20
+  }
 
 });
 
