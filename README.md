@@ -17,4 +17,8 @@ Create new application with ignite (choose full option)
 ignite new MyApplication
 ```
 
+# Docs
+
+## Linear layout
+<img src="screenshots/linearlayout.png" width="300">
 
