@@ -25,10 +25,10 @@ export default class LaunchScreen extends Component {
 
           {/*-------------*/}
           <Text>Item layout</Text>
-          <View style={styles.container}>
-            <View style={itemStyles.main}>
-              <Text style={itemStyles.text}>100X100</Text>
-            </View>
+          <View style={[styles.container, {height: 200, justifyContent: 'space-around'}]}>
+            <View style={itemStyles.leftTop}/>
+            <View style={itemStyles.centerTop}/>
+            <View style={itemStyles.rightTop}/>
           </View>
 
           {/*-------------*/}
@@ -76,17 +76,25 @@ const styles = StyleSheet.create({
 });
 
 const itemStyles = StyleSheet.create({
-  center: {
-    height: 200,
-    width: 200,
-    backgroundColor: 'blue'
+  leftTop: {
+    height: 50,
+    width: 50,
+    backgroundColor: 'blue',
+    alignSelf: 'flex-start'
   },
-  text: {
-    color: '#ffffff',
-    fontSize: 20
+  centerTop: {
+    height: 50,
+    width: 50,
+    backgroundColor: 'red',
+    alignSelf: 'center'
+  },
+  rightTop: {
+    height: 50,
+    width: 50,
+    backgroundColor: 'yellow',
+    alignSelf: 'flex-end'
   }
 });
-
 
 const linearLayoutStyles = StyleSheet.create({
   block1: {
@@ -114,4 +122,10 @@ const linearLayoutStyles = StyleSheet.create({
 
 });
 
-const relativeLayoutStyles = StyleSheet.create({});
+const relativeLayoutStyles = StyleSheet.create({
+
+
+
+
+
+});

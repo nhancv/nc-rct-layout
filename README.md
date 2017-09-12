@@ -22,3 +22,18 @@ ignite new MyApplication
 ## Linear layout
 <img src="screenshots/linearlayout.png" width="300">
 
+## Flex box
+- Container:
+```
+flexDirection:'row'|'column'
+justifyContent:'flex-start'|'flex-end'|'center'|'space-between'|'space-around'
+alignItems:'flex-start'|'flex-end'|'center'|'stretch'
+flexWrap:'wrap'|'nowrap'
+```
+
+- Item:
+```
+flex
+alignSelf:'auto'|'flex-start'|'flex-end'|'center'|'stretch'
+
+```
