@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {ScrollView, Text, Image, View, StyleSheet} from 'react-native'
+import {Dimensions, ScrollView, Text, Image, View, StyleSheet} from 'react-native'
 import {Container, Header, Left, Body, Right, Button, Icon, Title, Content} from 'native-base'
 
 export default class LaunchScreen extends Component {
@@ -24,6 +24,14 @@ export default class LaunchScreen extends Component {
         <Content>
 
           {/*-------------*/}
+          <Text>Relative layout</Text>
+          <View style={[styles.container, {height: 60}]}>
+            <View style={relativeLayoutStyles.topLeft}/>
+            <View style={relativeLayoutStyles.topCenter}/>
+            <View style={relativeLayoutStyles.topRight}/>
+          </View>
+
+          {/*-------------*/}
           <Text>Item layout</Text>
           <View style={[styles.container, {height: 200, justifyContent: 'space-around'}]}>
             <View style={itemStyles.leftTop}/>
@@ -34,20 +42,20 @@ export default class LaunchScreen extends Component {
           {/*-------------*/}
           <Text>Linear layout - vertical</Text>
           <View style={styles.container}>
-            <View style={linearLayoutStyles.block1}>
+            <View style={linearLayoutStyles.box1}>
               <Text style={linearLayoutStyles.text}>Block1</Text>
             </View>
-            <View style={linearLayoutStyles.block2}>
+            <View style={linearLayoutStyles.box2}>
               <Text style={linearLayoutStyles.text}>Block2</Text>
             </View>
           </View>
           {/*-------------*/}
           <Text>Linear layout - horizontal</Text>
           <View style={[styles.container, {flexDirection: 'row'}]}>
-            <View style={linearLayoutStyles.block3}>
+            <View style={linearLayoutStyles.box3}>
               <Text style={linearLayoutStyles.text}>Block3</Text>
             </View>
-            <View style={linearLayoutStyles.block4}>
+            <View style={linearLayoutStyles.box4}>
               <Text style={linearLayoutStyles.text}>Block4</Text>
             </View>
           </View>
@@ -97,20 +105,20 @@ const itemStyles = StyleSheet.create({
 });
 
 const linearLayoutStyles = StyleSheet.create({
-  block1: {
+  box1: {
     height: 100,
     backgroundColor: 'red'
   },
-  block2: {
+  box2: {
     height: 100,
     backgroundColor: 'green'
   },
-  block3: {
+  box3: {
     height: 100,
     flex: 1,
     backgroundColor: 'red'
   },
-  block4: {
+  box4: {
     height: 100,
     flex: 2,
     backgroundColor: 'green'
@@ -124,8 +132,30 @@ const linearLayoutStyles = StyleSheet.create({
 
 const relativeLayoutStyles = StyleSheet.create({
 
-
-
-
+  topLeft: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: 50,
+    height: 50,
+    backgroundColor: 'red'
+  },
+  topCenter: {
+    position: 'absolute',
+    top: 0,
+    left: Dimensions.get('window').width/2 - 25,
+    width: 50,
+    height: 50,
+    margin: 'auto',
+    backgroundColor: 'blue'
+  },
+  topRight: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    width: 50,
+    height: 50,
+    backgroundColor: 'green'
+  },
 
 });
