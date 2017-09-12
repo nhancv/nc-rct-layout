@@ -24,26 +24,33 @@ export default class LaunchScreen extends Component {
         <Content>
 
           {/*-------------*/}
-          <Text>Linear layout</Text>
-
-          <View style={linearLayoutStyles.container}>
-            <View style={linearLayoutStyles.header}>
-              <Text style={linearLayoutStyles.text}>200X100</Text>
-            </View>
-            <View style={linearLayoutStyles.main}>
-              <View  style={linearLayoutStyles.mainContent}>
-                <Text style={linearLayoutStyles.text}>100X100</Text>
-              </View>
-            </View>
-            <View style={linearLayoutStyles.footer}>
-              <Text style={linearLayoutStyles.text}>200X100</Text>
+          <Text>Item layout</Text>
+          <View style={styles.container}>
+            <View style={itemStyles.main}>
+              <Text style={itemStyles.text}>100X100</Text>
             </View>
           </View>
 
           {/*-------------*/}
-          <Text>Relative layout</Text>
-
-
+          <Text>Linear layout - vertical</Text>
+          <View style={styles.container}>
+            <View style={linearLayoutStyles.block1}>
+              <Text style={linearLayoutStyles.text}>Block1</Text>
+            </View>
+            <View style={linearLayoutStyles.block2}>
+              <Text style={linearLayoutStyles.text}>Block2</Text>
+            </View>
+          </View>
+          {/*-------------*/}
+          <Text>Linear layout - horizontal</Text>
+          <View style={[styles.container, {flexDirection: 'row'}]}>
+            <View style={linearLayoutStyles.block3}>
+              <Text style={linearLayoutStyles.text}>Block3</Text>
+            </View>
+            <View style={linearLayoutStyles.block4}>
+              <Text style={linearLayoutStyles.text}>Block4</Text>
+            </View>
+          </View>
 
         </Content>
       </Container>
@@ -51,35 +58,53 @@ export default class LaunchScreen extends Component {
   }
 }
 
-const linearLayoutStyles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
+    backgroundColor: 'gray'
   },
-  header: {
-    height: 100,
-    width: 200,
+  verticalLine: {
+    height: '100%',
+    width: 1,
     backgroundColor: 'red'
   },
-  main: {
+  horizontalLine: {
+    width: '100%',
+    height: 1,
+    backgroundColor: 'red'
+  }
+});
+
+const itemStyles = StyleSheet.create({
+  center: {
     height: 200,
     width: 200,
-    padding: 25,
-    borderWidth: 25,
-    borderColor: 'black',
-    margin: 25,
     backgroundColor: 'blue'
   },
-  mainContent: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+  text: {
+    color: '#ffffff',
+    fontSize: 20
+  }
+});
+
+
+const linearLayoutStyles = StyleSheet.create({
+  block1: {
+    height: 100,
     backgroundColor: 'red'
   },
-  footer: {
+  block2: {
     height: 100,
-    width: 200,
+    backgroundColor: 'green'
+  },
+  block3: {
+    height: 100,
+    flex: 1,
+    backgroundColor: 'red'
+  },
+  block4: {
+    height: 100,
+    flex: 2,
     backgroundColor: 'green'
   },
   text: {
@@ -89,3 +114,4 @@ const linearLayoutStyles = StyleSheet.create({
 
 });
 
+const relativeLayoutStyles = StyleSheet.create({});
