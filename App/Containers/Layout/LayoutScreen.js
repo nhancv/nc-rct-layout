@@ -8,12 +8,15 @@ export default class LaunchScreen extends Component {
       <Container>
         <Header>
           <Left>
-            <Button transparent>
+            <Button transparent
+                    onPress={() =>
+                      this.props.navigation.goBack()
+                    }>
               <Icon name='arrow-back'/>
             </Button>
           </Left>
           <Body>
-          <Title>Header</Title>
+          <Title>LayoutScreen</Title>
           </Body>
           <Right>
             <Button transparent>
