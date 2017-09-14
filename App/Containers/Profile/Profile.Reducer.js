@@ -14,19 +14,22 @@ export const reducer = createReducer(INITIAL_STATE, {
   [ProfileType.USER_REQUEST]: (state, action) => {
     return {...state,
       data: null,
-      isFetching: true
+      isFetching: true,
+      error: false
     }
   },
   [ProfileType.REQUEST]: (state, action) => {
     return {...state,
       data: null,
-      isFetching: true
+      isFetching: true,
+      error: false
     }
   },
   [ProfileType.SUCCESS]: (state, action) => {
     return {...state,
       data: action.data,
-      isFetching: false
+      isFetching: false,
+      error: false
     }
   },
   [ProfileType.FAILURE]: (state, action) => {

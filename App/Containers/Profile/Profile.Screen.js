@@ -54,12 +54,6 @@ class ProfileScreen extends Component {
 }
 
 function mapStateToProps(state) {
-  let test = {
-    isFetching: state.profile.isFetching,
-    data: state.profile.data,
-    error: state.profile.error,
-  };
-  console.log('test', test);
   return {
     isFetching: state.profile.isFetching,
     data: state.profile.data,
