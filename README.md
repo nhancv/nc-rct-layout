@@ -37,3 +37,15 @@ flex
 alignSelf:'auto'|'flex-start'|'flex-end'|'center'|'stretch'
 
 ```
+
+## Redux
+- Add 3 file to Profile module (Containers/Profile)
+```
+Profile.Action.js
+Profile.Api.js
+Profile.Reducer.js
+```
+- Assemble The Reducers at (Redux/index.js)
+- Connect Types To Sagas at (Sagas/index.js)
+
+
