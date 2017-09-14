@@ -32,7 +32,7 @@ export default function * root () {
     takeLatest(StartupTypes.STARTUP, startup),
 
     // some sagas receive extra parameters in addition to an action
-    takeLatest(GithubTypes.USER_REQUEST, getUserAvatar, api),
+    // takeLatest(GithubTypes.USER_REQUEST, getUserAvatar, api),
 
     takeLatest(ProfileType.USER_REQUEST, ProfileFunction.getUser, ProfileApi.create()),
 
