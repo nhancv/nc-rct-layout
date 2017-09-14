@@ -29,9 +29,24 @@ class ProfileScreen extends Component {
             onPress={() =>
               this.props.getData(ProfileAction.request('hello'))
             }>
-            <Text>Fetch data</Text>
+            <Text>Test data</Text>
           </Button>
-          <Text>{this.props.data}</Text>
+          <Button
+            onPress={() =>
+              this.props.getUser(ProfileAction.userRequest('nhancv'))
+            }>
+            <Text>Fetch user</Text>
+          </Button>
+
+          {
+            this.props.isFetching ?
+              <Text>Fetching...</Text> :
+              <View>
+                <Text>Data: {this.props.data}</Text>
+                {this.props.error ? <Text>Has error</Text> : null}
+              </View>
+          }
+
         </Content>
       </Container>
     )
@@ -39,14 +54,23 @@ class ProfileScreen extends Component {
 }
 
 function mapStateToProps(state) {
+  let test = {
+    isFetching: state.profile.isFetching,
+    data: state.profile.data,
+    error: state.profile.error,
+  };
+  console.log('test', test);
   return {
-    data: state.profile.data
+    isFetching: state.profile.isFetching,
+    data: state.profile.data,
+    error: state.profile.error,
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    getData: (request) => dispatch(request)
+    getData: (request) => dispatch(request),
+    getUser: (request) => dispatch(request)
   }
 }
 

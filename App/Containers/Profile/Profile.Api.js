@@ -1,18 +1,25 @@
 import apisauce from 'apisauce'
 
-const create = () => {
+const create = (baseURL = 'https://api.github.com/') => {
 
-  const data = "lakdsjfalsdkfj";
-
+  const data = "world";
   const getData = (request) => {
-    console.log('request', request);
     return request + "-" + data;
   };
 
-
+  //Example rest
+  const api = apisauce.create({
+    baseURL,
+    headers: {
+      'Cache-Control': 'no-cache'
+    },
+    timeout: 10000
+  });
+  const getUser = (username) => api.get('search/users', {q: username});
 
   return {
-    getData
+    getData,
+    getUser
   }
 };
 

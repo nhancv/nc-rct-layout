@@ -34,6 +34,8 @@ export default function * root () {
     // some sagas receive extra parameters in addition to an action
     takeLatest(GithubTypes.USER_REQUEST, getUserAvatar, api),
 
+    takeLatest(ProfileType.USER_REQUEST, ProfileFunction.getUser, ProfileApi.create()),
+
     takeLatest(ProfileType.REQUEST, ProfileFunction.getData, ProfileApi.create())
   ])
 }
