@@ -1,7 +1,7 @@
 import {StackNavigator} from 'react-navigation'
-import LayoutScreen from '../Containers/Layout/LayoutScreen'
-import MainScreen from '../Containers/Main/MainScreen'
-import ProfileScreen from '../Containers/Profile/ProfileScreen'
+import LayoutScreen from '../Containers/Layout/Layout.Screen'
+import MainScreen from '../Containers/Main/Main.Screen'
+import ProfileScreen from '../Containers/Profile/Profile.Screen'
 
 import styles from './Styles/NavigationStyles'
 
