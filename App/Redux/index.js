@@ -7,8 +7,9 @@ export default () => {
   const rootReducer = combineReducers({
     nav: require('./NavigationRedux').reducer,
     github: require('./GithubRedux').reducer,
-    search: require('./SearchRedux').reducer
-  })
+    search: require('./SearchRedux').reducer,
+    profile: require('../Containers/Profile/Profile.Reducer').reducer
+  });
 
   return configureStore(rootReducer, rootSaga)
 }
