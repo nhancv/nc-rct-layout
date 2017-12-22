@@ -1,3 +1,4 @@
+import '../Config/ReactotronConfig'
 import '../Config/index'
 import DebugConfig from '../Config/DebugConfig'
 import React, { Component } from 'react'
